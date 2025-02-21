@@ -13,8 +13,8 @@ class Room(models.Model):
 class Booking(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name='bookings')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='bookings')
-    start_time = models.DateField()
-    end_time = models.DateField() 
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField() 
     creation_time = models.DateTimeField(auto_now_add=True) 
 
     def __str__(self):
