@@ -1,7 +1,10 @@
-<div>
-    <h1>Room number: {{ room.number }}</h1>
-    <a href="{% url 'room-list' %}"><h2>Back to list</h2></a>
-    <p>Capacity: {{ room.capacity }}</p>
-    <p>Location: {{ room.location }}</p>
-    <p>Price: {{ room.price }}</p>
-</div>
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="room details">
+        <h1>Room number: {{ room.number }}</h1>
+        <p>Capacity: {{ room.capacity }}</p>
+        <p>Location: {{ room.location }}</p>
+        <p>Price: {{ room.price }}</p>
+    </div>
+{% endblock %}

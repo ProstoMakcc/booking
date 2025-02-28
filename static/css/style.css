@@ -1,0 +1,82 @@
+html {
+    height: 100%;
+}
+
+body {
+    padding-top: 75px;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.room {
+    border: 1px solid #b8b4b1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    height: 300px;
+    width: 310px;
+    box-sizing: border-box;
+}
+
+.header {
+    z-index: 1;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #b8b4b1;
+    padding: 5px;
+    height: 10%;
+    width: 100%;
+    border-image: linear-gradient(to right, #ffffff, #6b6666, #ffffff) 1;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 100vh;
+    margin-right: 5%;  
+    padding: 10px;
+    border-right: 1px solid #b8b4b1;
+    flex-shrink: 0;
+    border-image: linear-gradient(to bottom, #ffffff, #6b6666, #ffffff) 1;
+}
+
+.sidebar hr {
+    width: 100%; /* Ensure the horizontal line takes the full width */
+    border: none; /* Remove default border */
+    border-top: 1px solid #b8b4b1; /* Add custom border */
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.navigation {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px; 
+}
+
+.navigation:hover {
+    background-color: #b8b4b1;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.details, .bookform {
+    height: 75%;
+    width: 100%;
+    margin-right: 5%;
+}

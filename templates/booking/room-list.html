@@ -1,7 +1,14 @@
-{% for room in rooms %}
-    <div>
-        <a href="{% url 'room-details' room.pk %}"><h1>Room number: {{ room.number}}</h1></a>
-        <h2>Room capacity: {{ room.capacity }}</h2>
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="main-content">
+        {% for room in rooms %}
+        <div class="room">
+            <h1>Room number: {{ room.number }}</h1>
+            <h2>Room capacity: {{ room.capacity }}</h2>
+            <h3>Room location: {{ room.location }}</h3>
+            <button><a href="{% url 'room-details' room.pk %}">Details</a></button>
+        </div>
+    {% endfor %}
     </div>
-{% endfor %}
-    
+{% endblock %}

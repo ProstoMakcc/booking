@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking app</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="header gradient-border">
+        <h1>Additional info</h1>
+    </div>
+
+    <div class="sidebar gradient-border">
+        <h3>Navigation</h3>
+        <hr>
+        <a class="navigation" href="{% url 'room-list' %}">Room list</a>
+        <a class="navigation" href="{% url 'book-room' %}">Book a room</a>
+    </div>
+    
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>
