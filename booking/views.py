@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Room, Booking
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
+
 
 def room_list(request):
     rooms = Room.objects.all()
@@ -18,6 +20,7 @@ def room_details(request, pk):
 
     return render(request, "booking/room-details.html", context)
 
+@login_required
 def book_room(request):
     if request.method == "POST":
         room_number = request.POST.get("room-number")

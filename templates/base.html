@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="header gradient-border">
-        <h1>Additional info</h1>
+        <h1>Booking app</h1>
     </div>
 
     <div class="sidebar gradient-border">
@@ -17,6 +17,16 @@
         <hr>
         <a class="navigation" href="{% url 'room-list' %}">Room list</a>
         <a class="navigation" href="{% url 'book-room' %}">Book a room</a>
+        
+        {% if request.user.is_authenticated %}
+        <a class="navigation" href="{% url 'logout' %}">Logout</a>
+        {% else %}
+        <a class="navigation" href="{% url 'login' %}">Login</a>
+        <a class="navigation" href="{% url 'register' %}">Register</a>
+        {% endif %}
+        <hr>
+        <a class="navigation" href="{% url 'admin:index' %}">Admin Panel</a>
+        
     </div>
     
     {% block content %}

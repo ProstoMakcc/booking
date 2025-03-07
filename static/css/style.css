@@ -75,7 +75,7 @@ a {
     color: black;
 }
 
-.details, .bookform {
+.details, .bookform, .auth-form {
     height: 75%;
     width: 100%;
     margin-right: 5%;
