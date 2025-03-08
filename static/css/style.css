@@ -32,7 +32,7 @@ body {
     padding: 5px;
     height: 10%;
     width: 100%;
-    border-image: linear-gradient(to right, #ffffff, #6b6666, #ffffff) 1;
+    border-image: linear-gradient(to right, #ffffff, #c7c6c6, #ffffff) 1;
 }
 
 .sidebar {
@@ -44,13 +44,13 @@ body {
     padding: 10px;
     border-right: 1px solid #b8b4b1;
     flex-shrink: 0;
-    border-image: linear-gradient(to bottom, #ffffff, #6b6666, #ffffff) 1;
+    border-image: linear-gradient(to bottom, #ffffff, #c7c6c6, #ffffff) 1;
 }
 
 .sidebar hr {
-    width: 100%; /* Ensure the horizontal line takes the full width */
-    border: none; /* Remove default border */
-    border-top: 1px solid #b8b4b1; /* Add custom border */
+    width: 100%;
+    border: none; 
+    border-top: 1px solid #b8b4b1;
 }
 
 .main-content {
@@ -64,13 +64,15 @@ body {
     border-radius: 5px;
     padding: 5px;
     margin: 5px; 
+    text-decoration: none;
+    color: black;
 }
 
 .navigation:hover {
     background-color: #b8b4b1;
 }
 
-a {
+button {
     text-decoration: none;
     color: black;
 }
@@ -79,4 +81,88 @@ a {
     height: 75%;
     width: 100%;
     margin-right: 5%;
+}
+
+.container {
+    width: 100%;
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-form button {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid #4CAF50;
+    height: 30px;
+    width: 96%;
+}
+
+.auth-form input {
+    border-radius: 10px;
+    border: 1px solid #b8b4b1;
+    height: 30px;
+    width: 92%;
+    margin: 5px;
+}
+
+.login-sizes {
+    height: 50%;
+    width: 22%;
+    margin-bottom: 15%;
+}
+
+.register-sizes {
+    height: 70%;
+    width: 22%;
+    margin-bottom: 15%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.messages {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.messages li {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.messages .error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+.messages .warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+}
+
+.messages .success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+* {
+    margin: 5px;
 }

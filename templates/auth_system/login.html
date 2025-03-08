@@ -1,19 +1,46 @@
-{% extends "base.html" %}
-
-{% block content %}
-    <div class="room auth-form">
-        <form method="POST" action="{% url 'login' %}">
-            {% csrf_token %}
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username">
-            </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password">
-            </div>
-
-            <button type="submit">Login</button>
-        </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="room auth-form login-sizes">
+            <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div>
+                    <label for="username">Username:</label>
+                    <br>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <br>
+                    <input type="password" id="password" name="password">
+                </div>
+                
+                <div>
+                    <button type="submit">Login</button>
+                    <p>Don't have account?<a href="{% url 'register' %}">Register</a></p>
+                </div>
+            </form>
+            {{ form.errors }}
+    
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
     </div>
-{% endblock %}
+</body>
+</html>
+
+
+    

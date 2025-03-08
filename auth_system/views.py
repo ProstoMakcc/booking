@@ -15,6 +15,10 @@ def login_view(request):
                 login(request, user)
 
                 return redirect("room-list")
+            else:
+                messages.warning(request, "Username or password is incorrect.")
+        else:
+            messages.error(request, "Form is not valid. Please correct the errors.")
     else:
         form = LoginForm()
 
@@ -24,12 +28,6 @@ def logout_view(request):
     logout(request)
 
     return redirect("room-list")
-
-from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
-from .forms import LoginForm, RegisterForm
-from django.contrib import messages
-from .models import ExtendedUser
 
 def register_view(request):
     if request.method == "POST":
